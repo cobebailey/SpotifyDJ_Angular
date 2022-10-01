@@ -1,0 +1,22 @@
+<div class="search-results">
+  <div class="tab">
+    <button class="tablinks" id="searchTab">Search Results</button>
+    <button class="tablinks" id="bindingTab">Key Binding</button>
+  </div>
+  <ul class="results">
+    <h1 id="playlist">
+      <app-search-item
+        *ngIf="playlists"
+        [playlistsChild]="playlists"
+      ></app-search-item>
+    </h1>
+  </ul>
+
+  <div class="pagination"></div>
+
+  <p class="copyright">
+    <a class="twitter-link" target="_blank" href="https://github.com/cobebailey"
+      >Created by Cobe Bailey</a
+    >
+  </p>
+</div>

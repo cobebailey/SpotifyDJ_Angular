@@ -1,0 +1,67 @@
+<header class="header">
+  <img src="assets/images/logot.png" alt="Logot" class="header__logo" />
+  <form class="search">
+    <input
+      #searchQuery
+      (keyup.enter)="
+        searchStringToParent(searchQuery.value); searchQuery.value = ''
+      "
+      type="text"
+      class="search__field"
+      placeholder="Spotify DJ : Find a playlist"
+    />
+    <button
+      type="button"
+      (click)="searchStringToParent(searchQuery.value); searchQuery.value = ''"
+      class="btn search__btn"
+    >
+      <svg class="search__icon">
+        <use href="assets/images/icons.svg#icon-search"></use>
+      </svg>
+      <span>Search</span>
+    </button>
+  </form>
+
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <button class="nav__btn nav__btn--display inactive">
+          <span>OFF 🔴</span>
+        </button>
+      </li>
+      <li class="nav__item">
+        <button
+          (click)="authSpotify($event)"
+          class="nav__btn nav__btn--authBtn"
+        >
+          <svg class="nav__icon">
+            <use href="assets/images/icons.svg#icon-edit"></use>
+          </svg>
+          <span>Log in</span>
+        </button>
+      </li>
+      <li class="nav__item">
+        <button class="nav__btn nav__btn--playerizer">
+          <svg class="nav__icon">
+            <use href="assets/images/icons.svg#icon-bookmark"></use>
+          </svg>
+          <span>PLAYERIZER</span>
+        </button>
+        <div class="playerizer">
+          <ul class="playerizer__list">
+            <div class="message">
+              <div>
+                <svg>
+                  <use href="assets/images/icons.svg#icon-smile"></use>
+                </svg>
+              </div>
+              <p></p>
+              <button class="btn actbtn">ON</button>
+              <button class="btn deactbtn">OFF</button>
+            </div>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,25 @@
+<div *ngIf="playlistsChild">
+  <!-- <li *ngFor="let playlist of playlistsChild">
+    {{ getPlaylistName(playlist) }}
+  </li> -->
+
+  <div *ngFor="let playlist of playlistsChild">
+    <li class="preview">
+      <a
+        class="preview__link {{ compareId(playlist) }}"
+        href="#p{{ getID(playlist) }}"
+      >
+        <figure class="preview__fig">
+          <img
+            src="{{ getImage(playlist) }}"
+            alt="{{ getPlaylistName(playlist) }}"
+          />
+        </figure>
+        <div class="preview__data">
+          <h4 class="preview__title">{{ getPlaylistName(playlist) }}</h4>
+          <p class="preview__publisher">{{ getOwner(playlist) }}</p>
+        </div>
+      </a>
+    </li>
+  </div>
+</div>
